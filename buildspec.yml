@@ -13,7 +13,7 @@ phases:
         commands:
             - echo "we are in the build block"
             - echo "we will run some tests"
-            - grep -Fq "submitToAPIFlatten" index.html
+            - grep -Fq "submitToAPIFlatten" Index.html
     post_build:
         commands:
             - echo "we are in the post build phase"
