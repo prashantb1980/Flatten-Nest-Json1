@@ -7,7 +7,7 @@ def lambda_handler(event, context):
     #fetch the event body that has the input json coming from the website
     
     json_body = event['body']
-    
+    print('abc')
     #Converts string to Json python dictionary
     json_body1 = json.loads(json_body)
     
