@@ -1,0 +1,85 @@
+===================================
+Process for using the Flatten API:-
+===================================
+1. use the website https://common-flatten-nest-json.s3.amazonaws.com/Index.html deployed as a static website
+
+2. Enter the Json to be flattened and hit button "Flatten"
+
+3. The Jquery invokes an API gateway endpoint https://7fc6yo87h8.execute-api.us-east-1.amazonaws.com/Flatten
+
+4. This API endpoint does a proxy-integration to a lambda function - Json-Flatten-Nest
+
+Example 1:-
+
+{"Grapes": {"colors": ["green","Black"],"tastes": {"ripe": "sweet","raw": "sour"}}}
+
+Expected output:-
+{"Grapes.colors.0":"green","Grapes.colors.1":"Black","Grapes.tastes.ripe":"sweet","Grapes.tastes.raw":"sour"}
+
+
+Example 2:-
+{
+  "banana": {
+    "colors": [
+      "green",
+      "yellow"
+    ],
+    "tastes": {
+      "ripe": "sweet",
+      "raw": "sour"
+    }
+  }
+}
+Expected output:-
+{"banana.colors.0":"green","banana.colors.1":"yellow","banana.tastes.ripe":"sweet","banana.tastes.raw":"sour"}
+
+Example t:-
+{
+  "toyota": {
+    "wheels": [
+      "big",
+      "small"
+    ],
+    "models": [
+      {
+        "corolla": {
+          "color": {
+            "light": "grey",
+            "dark": "blue"
+          }
+        }
+      }
+    ]
+  }
+}
+
+Output:-
+{"toyota.wheels.0":"big","toyota.wheels.1":"small","toyota.models.0.corolla.color.light":"grey","toyota.models.0.corolla.color.dark":"blue"}
+
+
+Notes:-
+The actual code for Json flattening is downloaded from pip install json-flatten. The downloaded code was included into the final lambda code. There were some issues in including the code to Lamda Layer.
+
+
+===================================
+Process for using the un-Flatten API:-
+===================================
+1. Use the website https://common-flatten-nest-json.s3.amazonaws.com/Index.html deployed as a static website
+
+2. Enter the flattened json and hit submit
+
+3. The Jquery invokes an API gateway endpoint  https://bg9cgtb4t5.execute-api.us-east-1.amazonaws.com/Unflatten
+
+4. This API endpoint does a proxy-integration to a lamda function - Json-Flatten-Nest
+
+Example 1:-
+{"Grapes.colors.0":"green","Grapes.colors.1":"Black","Grapes.tastes.ripe":"sweet","Grapes.tastes.raw":"sour"}
+
+Output:-
+{"Grapes": {"colors": ["green","Black"],"tastes": {"ripe": "sweet","raw": "sour"}}}
+
+Example 2:-
+{"toyota.wheels.0":"big","toyota.wheels.1":"small","toyota.models.0.corolla.color.light":"grey","toyota.models.0.corolla.color.dark":"blue"}
+
+Output:-
+{"toyota":{"wheels":["big","small"],"models":[{"corolla":{"color":{"light":"grey","dark":"blue"}}}]}}
