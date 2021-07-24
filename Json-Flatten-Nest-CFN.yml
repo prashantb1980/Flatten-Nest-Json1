@@ -5,13 +5,13 @@ Resources:
     Properties:
       Runtime: python3.8
       Role: arn:aws:iam::249660410482:role/service-role/Json-Flatten-Nest-role-4oenas5e
-      Handler: flatten_nest_json.handler
+      Handler: index.handler
       Code:
         ZipFile: |
           import json
           import flatten_json as ls
 
-          def flatten_nest_json_handler(event, context):
+          def handler(event, context):
 
     
               #fetch the event body that has the input json coming from the website
