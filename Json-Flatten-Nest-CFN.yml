@@ -6,7 +6,7 @@ Resources:
     Properties:
       Runtime: python3.8
       Role: arn:aws:iam::249660410482:role/service-role/Json-Flatten-Nest-role-4oenas5e
-      Handler: index.handler
+      Handler: flatten_nest_json.handler
       Code:
         ZipFile: |
           import json
@@ -41,5 +41,7 @@ Resources:
                   }
               return response 
       Description: Invoke a function during stack creation.
+      Layers:
+          - arn:aws:lambda:us-east-1:249660410482:layer:flattennestjson1:1
       TracingConfig:
         Mode: Active
