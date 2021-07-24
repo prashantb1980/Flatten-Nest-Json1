@@ -18,5 +18,5 @@ phases:
             - echo "we are in the post build phase"
 artifacts:
   files:
-    - 'Lamda_CF.yml'
+    - 'Lamda_CF.YML'
   name: flatten-nest-json-cicd-artifacts	            
