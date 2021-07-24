@@ -30,7 +30,7 @@ Resources:
 
               response = {
                   'isBase64Encoded': False,
-                  'statusCode': 200, 
+                  'statusCode': 100, 
                   'headers': { 
                       'Access-Control-Allow-Origin': '*',
                       'Access-Control-Allow-Methods': 'POST, OPTIONS',
