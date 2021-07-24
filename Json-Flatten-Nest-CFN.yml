@@ -1,5 +1,4 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Lambda function with cfn-response.
 Resources:
   primer:
     Type: AWS::Lambda::Function
@@ -12,7 +11,7 @@ Resources:
           import json
           import flatten_json as ls
 
-          def flatten_nest_json(event, context):
+          def flatten_nest_json_handler(event, context):
 
     
               #fetch the event body that has the input json coming from the website
