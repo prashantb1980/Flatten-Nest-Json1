@@ -93,6 +93,7 @@ function submitToAPINest(e1) {
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
+           console.log(errorMessage);
            alert("Please check if your input format is correct")           
          }});       
 
