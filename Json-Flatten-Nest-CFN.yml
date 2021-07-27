@@ -4,7 +4,7 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       Runtime: python3.8
-      Role: arn:aws:iam::249660410482:role/service-role/Json-Flatten-Nest-role-4oenas5e
+      Role: arn:aws:iam::249660410482:policy/Flatten-Nest-Json-Stack-primer-R4CIxDsLfo6E-Role
       Handler: index.handler
       Code:
         ZipFile: |
