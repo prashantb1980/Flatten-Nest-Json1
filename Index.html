@@ -47,7 +47,7 @@ function submitToAPIFlatten(e) {
          error: function (request, errorType, errorMessage) {
            // show an error message
            alert("Some error occurred. Try again after some time");   
-	   $('#outputmessage').val(request)        
+	   $('#output').val(request)        
          }});       
 
      }
@@ -95,13 +95,13 @@ function submitToAPINest(e1) {
            // show an error message
            console.log(errorMessage);
            alert("Some error occurred. Try again after some time");
-           $('#outputmessage').val(request)               
+           $('#output').val(request)               
          }});       
 
      }
 
 function submitToAPIReset(e2) {
-	$('##input').val('');
+	$('#input').val('');
 	$('#output').val('');
 	return;	
 
