@@ -46,8 +46,9 @@ function submitToAPIFlatten(e) {
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
-           alert("Some error occurred. Try again after some time");   
-	   $('#output').val(request)        
+           alert("Some error occurred. Check the output field for details. Try again after some time");
+           const convertedString = JSON.stringify(request);
+	   $('#output').val(convertedString)        
          }});       
 
      }
@@ -94,8 +95,9 @@ function submitToAPINest(e1) {
          error: function (request, errorType, errorMessage) {
            // show an error message
            console.log(errorMessage);
-           alert("Some error occurred. Try again after some time");
-           $('#output').val(request)               
+           alert("Some error occurred. Check the output field for details. Try again after some time");
+           const convertedString = JSON.stringify(request);
+	   $('#output').val(convertedString)               
          }});       
 
      }
