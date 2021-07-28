@@ -41,19 +41,12 @@ function submitToAPIFlatten(e) {
            console.log(response); 
            alert("Successful");
  	   const convertedString = JSON.stringify(response);
-	   $('#output').val(convertedString) ;
-	   $('#outputmessage').val('Request Successful')
+	   $('#output').val(convertedString)
            
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
-           console.log('request');
-           console.log(request);
-           console.log('errortype');
-           console.log(errorType);
-           console.log('errorMessage');
-           console.log(errorMessage);
-           alert(errorMessage);   
+           alert("Some error occurred. Try again after some time");   
 	   $('#outputmessage').val(request)        
          }});       
 
@@ -96,13 +89,12 @@ function submitToAPINest(e1) {
 	   alert("Successful");
  	   const convertedString = JSON.stringify(response);
 	   $('#output').val(convertedString);
-           $('#outputmessage').val('Request Successful')
       
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
            console.log(errorMessage);
-           alert("Please check if your input format is correct");
+           alert("Some error occurred. Try again after some time");
            $('#outputmessage').val(request)               
          }});       
 
@@ -123,6 +115,5 @@ function submitToAPIReset(e2) {
       <button type="Flatten" onClick="submitToAPIFlatten(event)" class="btn btn-lg" style="margin-top:20px;">Flatten</button>
       <button type="Nest" onClick="submitToAPINest(event)" class="btn btn-lg" style="margin-top:20px;">Nest</button>    
       <button type="Reset" onClick="submitToAPIReset(event)" class="btn btn-lg" style="margin-top:20px;">Reset</button>  
-      <label id="outputmessage" placeholder="Sample output message"></label>   
 </form>
 </html>
