@@ -93,7 +93,7 @@ function submitToAPINest(e1) {
          success: function (response) {
            // clear form and show a success message
 	   console.log(response); 
-	   alert("Successful")
+	   alert("Successful");
  	   const convertedString = JSON.stringify(response);
 	   $('#output').val(convertedString);
            $('#outputmessage').val('Request Successful')
@@ -123,6 +123,6 @@ function submitToAPIReset(e2) {
       <button type="Flatten" onClick="submitToAPIFlatten(event)" class="btn btn-lg" style="margin-top:20px;">Flatten</button>
       <button type="Nest" onClick="submitToAPINest(event)" class="btn btn-lg" style="margin-top:20px;">Nest</button>    
       <button type="Reset" onClick="submitToAPIReset(event)" class="btn btn-lg" style="margin-top:20px;">Reset</button>  
-      <label id="outputmessage"></label>   
+      <label id="outputmessage" placeholder="Sample output message"></label>   
 </form>
 </html>
