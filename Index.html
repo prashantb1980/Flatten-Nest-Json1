@@ -46,6 +46,12 @@ function submitToAPIFlatten(e) {
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
+           console.log('request');
+           console.log(request);
+           console.log('errortype');
+           console.log(errorType);
+           console.log('errorMessage')
+           console.log(errorMessage)
            alert(errorMessage)           
          }});       
 
