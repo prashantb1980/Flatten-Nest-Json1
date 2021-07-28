@@ -41,18 +41,20 @@ function submitToAPIFlatten(e) {
            console.log(response); 
            alert("Successful");
  	   const convertedString = JSON.stringify(response);
-	   $('#output').val(convertedString) 
+	   $('#output').val(convertedString) ;
+	   $('#outputmessage').val('Request Successful')
            
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
            console.log('request');
-           console.log(responseJSON);
+           console.log(request);
            console.log('errortype');
            console.log(errorType);
            console.log('errorMessage');
            console.log(errorMessage);
-           alert(errorMessage)           
+           alert(errorMessage);   
+	   $('#outputmessage').val(request)        
          }});       
 
      }
@@ -93,14 +95,15 @@ function submitToAPINest(e1) {
 	   console.log(response); 
 	   alert("Successful")
  	   const convertedString = JSON.stringify(response);
-	   $('#output').val(convertedString)
-           
+	   $('#output').val(convertedString);
+           $('#outputmessage').val('Request Successful')
       
          },
          error: function (request, errorType, errorMessage) {
            // show an error message
            console.log(errorMessage);
-           alert("Please check if your input format is correct")           
+           alert("Please check if your input format is correct");
+           $('#outputmessage').val(request)               
          }});       
 
      }
@@ -119,6 +122,7 @@ function submitToAPIReset(e2) {
       <textarea id="output" rows="10" placeholder="Result Flattend JSON or Nested JSON" class="form-control" style="width:100%;"></textarea><br/>
       <button type="Flatten" onClick="submitToAPIFlatten(event)" class="btn btn-lg" style="margin-top:20px;">Flatten</button>
       <button type="Nest" onClick="submitToAPINest(event)" class="btn btn-lg" style="margin-top:20px;">Nest</button>    
-      <button type="Reset" onClick="submitToAPIReset(event)" class="btn btn-lg" style="margin-top:20px;">Reset</button>    
+      <button type="Reset" onClick="submitToAPIReset(event)" class="btn btn-lg" style="margin-top:20px;">Reset</button>  
+      <label id="outputmessage"></label>   
 </form>
 </html>
